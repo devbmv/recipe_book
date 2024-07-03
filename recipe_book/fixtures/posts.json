@@ -1,0 +1,41 @@
+[
+    {
+        "model": "recipe_book.post",
+        "pk": 1,
+        "fields": {
+            "title": "Sample Post 1",
+            "slug": "sample-post-1",
+            "author": 1,
+            "created_on": "2024-07-01T00:00:00Z",
+            "status": 1,
+            "instructions": "Sample instructions 1",
+            "ingredients": "Sample ingredients 1"
+        }
+    },
+    {
+        "model": "recipe_book.post",
+        "pk": 2,
+        "fields": {
+            "title": "Sample Post 2",
+            "slug": "sample-post-2",
+            "author": 1,
+            "created_on": "2024-07-02T00:00:00Z",
+            "status": 1,
+            "instructions": "Sample instructions 2",
+            "ingredients": "Sample ingredients 2"
+        }
+    },
+    {
+        "model": "recipe_book.post",
+        "pk": 3,
+        "fields": {
+            "title": "Sample Post 3",
+            "slug": "sample-post-3",
+            "author": 1,
+            "created_on": "2024-07-03T00:00:00Z",
+            "status": 1,
+            "instructions": "Sample instructions 3",
+            "ingredients": "Sample ingredients 3"
+        }
+    }
+]

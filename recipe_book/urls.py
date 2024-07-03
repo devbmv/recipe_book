@@ -1,6 +1,9 @@
+from .views import PostList
+from . import views
 from django.urls import path
 from .views import Index
 
+
 urlpatterns = [
-    path('', Index.as_view(), name='recipe_book'),
+    path('', PostList.as_view(), name='home'),
 ]
