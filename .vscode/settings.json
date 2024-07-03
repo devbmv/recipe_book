@@ -12,7 +12,11 @@
       "**/core.python*": true,
       "**/CVS": true
    },
+<<<<<<< HEAD
    "files.autoSave": "afterDelay",
+=======
+   "files.autoSave": "off",
+>>>>>>> c5ca3ee59146f21e2acd12af6ff4c0316184356c
    "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
 }
