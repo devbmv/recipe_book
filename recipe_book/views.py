@@ -11,9 +11,10 @@ def home(request):
 
 
 class Index(TemplateView):
-    template_name = 'recipe_book/index.html'
+    template_name = "recipe_book/index.html"
 
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
-    template_name = "recipe_book/recipe_list.html"
+    template_name = "recipe_book/index.html"
+    paginate_by = 6
