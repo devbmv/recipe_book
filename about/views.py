@@ -1,20 +1,15 @@
 from django.shortcuts import render
+from .models import About
 
-# Create your views here.
-class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1)
-    template_name = "about/about.html"
-    paginate_by = 4
-    
 
-def recipe_detail(request, slug):
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
+def about_me(request):
+    """
+    Renders the About page
+    """
+    about = About.objects.all().order_by('-updated_on').first()
 
     return render(
         request,
         "about/about.html",
-        {"post": post,
-        "coder":"Matt Rudge",
-        }
+        {"about": about},
     )
