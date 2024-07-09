@@ -15,4 +15,5 @@
    "files.autoSave": "afterDelay",
    "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas"
-}
+}{ "python.analysis.extraPaths": ["C:/Users/cppdoth/Desktop/pp4/recipe_book/.venv/Lib/site-packages"], "python.analysis.autoSearchPaths": true, "python.analysis.useLibraryCodeForTypes": true }
+{ "python.analysis.extraPaths": ["C:/Users/cppdoth/Desktop/pp4/recipe_book/.venv/Lib/site-packages"], "python.analysis.autoSearchPaths": true, "python.analysis.useLibraryCodeForTypes": true }
