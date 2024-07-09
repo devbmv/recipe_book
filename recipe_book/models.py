@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.views import generic
+from django.shortcuts import render, get_object_or_404
 
 # Create your models here.
 
@@ -44,3 +45,16 @@ class Comment(models.Model):
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "recipe_list.html"
+
+def profile_page(request):
+    user = get_object_or_404(User, username=request.user.username)
+    comments = user.commenter.all()
+
+    return render(
+        request,
+        "profile_page.html",
+        {
+            "user": user,
+            "comments": comments,
+        },
+    )
