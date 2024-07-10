@@ -19,6 +19,8 @@ def recipe_detail(request, slug):
     new_comment = None
 
     if request.method == "POST":
+        print("Received a post request")
+
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
@@ -31,13 +33,12 @@ def recipe_detail(request, slug):
             comment_form = CommentForm()  # Redefine comment_form to clear the form
     else:
         comment_form = CommentForm()
-
+    print("About to render template")
     return render(
         request,
         "recipe_book/recipe_detail.html",
         {
             "post": post,
-            "coder": "Mick",
             "comments": comments,
             "comment_count": comment_count,
             "comment_form": comment_form,
