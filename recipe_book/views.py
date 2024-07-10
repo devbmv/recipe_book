@@ -4,6 +4,7 @@ from .models import Post, Comment
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
+from cloudinary.models import CloudinaryField
 
 
 class PostList(generic.ListView):
@@ -53,7 +54,6 @@ def comment_edit(request, slug, comment_id):
     view to edit comments
     """
     if request.method == "POST":
-
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)

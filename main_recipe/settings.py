@@ -91,6 +91,7 @@ WSGI_APPLICATION = "main_recipe.wsgi.application"
 # Database
 
 DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+# CLOUDINARY = {"default": dj_database_url.parse(os.environ.get("CLOUDINARY_URL"))}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
