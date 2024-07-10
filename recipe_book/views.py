@@ -81,8 +81,33 @@ def comment_delete(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+        messages.add_message(request, messages.SUCCESS, "Comment deleted!")
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(
+            request, messages.ERROR, "You can only delete your own comments!"
+        )
 
-    return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+    return HttpResponseRedirect(reverse("recipe_detail", args=[slug]))
+
+
+def review_edit(request, event_id, review_id):
+    """
+    view to edit reviews
+    """
+    if request.method == "POST":
+
+        queryset = Event.objects.all()
+        event = get_object_or_404(queryset, pk=event_id)
+        review = get_object_or_404(Review, pk=review_id)
+        review_form = ReviewForm(data=request.POST, instance=review)
+
+        if review_form.is_valid() and review.reviewer == request.user:
+            review = review_form.save(commit=False)
+            review.reviewer = request.user
+            review.event = event
+            review.save()
+            messages.add_message(request, messages.SUCCESS, "Review Updated!")
+        else:
+            messages.add_message(request, messages.ERROR, "Error updating Review!")
+
+    return HttpResponseRedirect(reverse("event_detail", args=[event_id]))

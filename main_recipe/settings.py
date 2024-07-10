@@ -38,16 +38,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "cloudinary_storage",
     "django.contrib.sites",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    'crispy_forms',
-    'crispy_bootstrap5',
+    "crispy_forms",
+    "crispy_bootstrap5",
     "recipe_book",
     "django_summernote",
+    "cloudinary",
     "about",
-
 ]
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/"
