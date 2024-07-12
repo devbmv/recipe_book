@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 import dj_database_url
 
@@ -91,6 +92,8 @@ WSGI_APPLICATION = "main_recipe.wsgi.application"
 # Database
 
 DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 # CLOUDINARY = {"default": dj_database_url.parse(os.environ.get("CLOUDINARY_URL"))}
 
 # Password validation
